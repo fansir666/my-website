@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fansir - 软件产品专员 | 安克创新</title>
+    <meta name="description" content="Fansir，安克创新ATIT部门软件产品专员。2年产品经验，擅长产品从0到1、用户增长运营、内容管理与项目管理，英语专四专八，交传口译能力。">
+    <meta name="keywords" content="Fansir,安克创新,软件产品专员,产品经理,用户增长,内容运营,项目管理,ATIT">
+    <meta name="author" content="Fansir">
+    <meta property="og:title" content="Fansir - 软件产品专员 | 安克创新">
+    <meta property="og:description" content="安克创新ATIT部门软件产品专员，2年产品经验，擅长产品从0到1、用户增长运营、内容管理与项目管理。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="profile-photo.jpg">
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip to content link for keyboard users -->
+    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+
+    <!-- Aurora background -->
+    <div class="aurora-bg" aria-hidden="true">
+        <span class="aurora-blob a1"></span>
+        <span class="aurora-blob a2"></span>
+        <span class="aurora-blob a3"></span>
+        <span class="aurora-blob a4"></span>
+        <span class="aurora-blob a5"></span>
+    </div>
+
+    <!-- Ink drop canvas -->
+    <canvas id="inkCanvas" aria-hidden="true"></canvas>
+
+    <!-- 滚动进度条 -->
+    <div class="scroll-progress"></div>
+
+    <!-- 骨架屏加载 -->
+    <div class="loading-overlay">
+        <div class="skeleton-screen">
+            <div class="sk-nav">
+                <div class="sk sk-logo"></div>
+                <div class="sk-nav-group">
+                    <div class="sk sk-nav-link"></div>
+                    <div class="sk sk-nav-link"></div>
+                    <div class="sk sk-nav-link"></div>
+                    <div class="sk sk-nav-link"></div>
+                    <div class="sk sk-nav-link"></div>
+                </div>
+            </div>
+            <div class="sk-hero">
+                <div class="sk sk-avatar"></div>
+                <div class="sk sk-heading"></div>
+                <div class="sk sk-subheading"></div>
+                <div class="sk sk-text-line"></div>
+                <div class="sk-tags">
+                    <div class="sk sk-tag"></div>
+                    <div class="sk sk-tag"></div>
+                    <div class="sk sk-tag"></div>
+                    <div class="sk sk-tag"></div>
+                    <div class="sk sk-tag"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Fansir</a>
+            <ul class="nav-links" id="main-navigation">
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#capabilities">核心能力</a></li>
+                <li><a href="#work">工作系统</a></li>
+                <li><a href="#life">兴趣爱好</a></li>
+                <li><a href="#contact">联系我</a></li>
+            </ul>
+            <button class="menu-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="main-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主要内容容器 -->
+    <div class="main-container" id="main-content" tabindex="-1">
+
+        <!-- Hero个人介绍区域 -->
+        <section class="hero-section" id="home">
+            <div class="profile-container">
+                <img class="profile-image hero-reveal hero-delay-1" src="profile-photo.jpg" alt="Fansir Profile Picture">
+                <div class="profile-info">
+                    <h1 class="profile-title hero-reveal hero-delay-2">Fansir</h1>
+                    <div class="typewriter-wrapper hero-reveal hero-delay-3">
+                        <span class="typewriter-text" id="typewriter"></span><span class="typewriter-cursor">|</span>
+                    </div>
+                    <h2 class="profile-subtitle hero-reveal hero-delay-3">软件产品专员</h2>
+                    <p class="profile-company hero-reveal hero-delay-4">安克创新 · ATIT部门 · 安克大楼18F-N093</p>
+                    <div class="profile-tags hero-reveal hero-delay-5">
+                        <span class="profile-tag"><span class="roll-num" data-target="3"></span>年产品经验</span>
+                        <span class="profile-tag">用户增长</span>
+                        <span class="profile-tag">内容管理</span>
+                        <span class="profile-tag">项目管理</span>
+                        <span class="profile-tag">产品设计</span>
+                        <span class="profile-tag">英语专四专八</span>
+                        <span class="profile-tag"><span class="roll-num" data-target="1"></span>w+粉丝运营</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我区域 - Split Screen Scroll Layout -->
+        <section class="about-scroll-wrapper" id="about">
+            <div class="about-sticky">
+                <!-- 左右分屏区域 -->
+                <div class="about-body">
+                <!-- 大标题横跨三列 -->
+                <div class="about-header">
+                    <h2 class="section-title">关于我</h2>
+                    <p class="section-subtitle">产品思维 · 用户增长 · 内容运营</p>
+                </div>
+                <!-- 左侧：固定文字内容 -->
+                <div class="about-left">
+                    <div class="about-left-inner">
+                        <div class="about-text">
+                            <p>你好，很高兴认识你！我是来自<span class="highlight-text">ATIT部门</span>的校招生Fansir。</p>
+                            <p>作为一名<strong>软件产品专员</strong>，我拥有2年丰富的产品实习经验，曾深度参与娱乐、社交、互联网广告、政府外交、大数据安全、互联网货运代理等多个行业的产品工作。</p>
+                            <p>在<strong>用户增长、内容管理、项目管理、产品设计</strong>等领域都有着扎实的实践经验，特别擅长从0到1的产品孵化过程。我曾经带领团队从零搭建词汇学习小程序系统，也从零开始运营出拥有1万+粉丝的账号。</p>
+                            <p>除了产品能力，我还拥有<strong>英语专四专八</strong>证书，具备交传口译能力，曾在上海外语出版社担任编辑工作。同时运营着个人公众号，已发布450+篇原创内容，积累了3000+忠实粉丝。</p>
+                        </div>
+                        <!-- 进度指示器 -->
+                        <div class="about-progress">
+                            <div class="about-progress-track">
+                                <div class="about-progress-fill"></div>
+                            </div>
+                            <div class="about-progress-text"><span class="about-current-index">1</span> / 6</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 中间：流动曲线动画 -->
+                <div class="about-curve" aria-hidden="true">
+                    <svg viewBox="0 0 80 600" preserveAspectRatio="none" class="curve-svg">
+                        <defs>
+                            <linearGradient id="curveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(0,255,255,0)" />
+                                <stop offset="30%" stop-color="rgba(0,255,255,0.5)" />
+                                <stop offset="50%" stop-color="rgba(0,200,255,0.7)" />
+                                <stop offset="70%" stop-color="rgba(0,255,255,0.5)" />
+                                <stop offset="100%" stop-color="rgba(0,255,255,0)" />
+                            </linearGradient>
+                            <filter id="curveGlow">
+                                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                            </filter>
+                        </defs>
+                        <path d="M40,0 C65,75 15,150 40,225 C65,300 15,375 40,450 C65,525 15,600 40,600" fill="none" stroke="rgba(0,255,255,0.06)" stroke-width="1" />
+                        <path class="curve-path" d="M40,0 C65,75 15,150 40,225 C65,300 15,375 40,450 C65,525 15,600 40,600" fill="none" stroke="url(#curveGrad)" stroke-width="1.5" stroke-dasharray="10 6" filter="url(#curveGlow)" />
+                        <circle r="4" fill="rgba(0,255,255,0.9)" filter="url(#curveGlow)">
+                            <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#orbP" /></animateMotion>
+                        </circle>
+                        <circle r="10" fill="rgba(0,255,255,0.12)">
+                            <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#orbP" /></animateMotion>
+                        </circle>
+                        <path id="orbP" d="M40,0 C65,75 15,150 40,225 C65,300 15,375 40,450 C65,525 15,600 40,600" fill="none" />
+                    </svg>
+                </div>
+
+                <!-- 右侧：滚动替换内容区 -->
+                <div class="about-right">
+                    <div class="about-panels">
+                        <div class="about-panel active" data-index="0">
+                            <div class="panel-number">01</div>
+                            <h3 class="panel-title">跨行业产品实习</h3>
+                            <div class="panel-stat"><span class="count-num" data-target="3">0</span>年</div>
+                            <p class="panel-desc">3年产品实习经验，深度参与娱乐、社交、互联网广告、政府外交、大数据安全、互联网货运代理等多个行业的产品工作，积累了丰富的跨行业产品视野。</p>
+                        </div>
+                        <div class="about-panel" data-index="1">
+                            <div class="panel-number">02</div>
+                            <h3 class="panel-title">从0到1产品孵化</h3>
+                            <div class="panel-stat">全流程掌控</div>
+                            <p class="panel-desc">带领团队从零搭建词汇学习小程序系统，具备完整的产品设计和项目管理能力，从需求分析、原型设计到开发上线全流程掌控。</p>
+                        </div>
+                        <div class="about-panel" data-index="2">
+                            <div class="panel-number">03</div>
+                            <h3 class="panel-title">用户运营增长</h3>
+                            <div class="panel-stat"><span class="count-num" data-target="1">0</span>w+ 粉丝</div>
+                            <p class="panel-desc">从零开始运营出拥有1万+粉丝的账号，精通用户获取、留存与数据驱动增长策略，深谙社交媒体运营之道。</p>
+                        </div>
+                        <div class="about-panel" data-index="3">
+                            <div class="panel-number">04</div>
+                            <h3 class="panel-title">原创内容创作</h3>
+                            <div class="panel-stat"><span class="count-num" data-target="450">0</span>+ 篇</div>
+                            <p class="panel-desc">个人公众号已发布450+篇原创内容，涵盖语言学习、书评影评、音乐分享、时事评论等多个系列，积累了3000+忠实粉丝。</p>
+                        </div>
+                        <div class="about-panel" data-index="4">
+                            <div class="panel-number">05</div>
+                            <h3 class="panel-title">英语专四专八</h3>
+                            <div class="panel-stat">交传口译</div>
+                            <p class="panel-desc">英语专业四级与八级良好，具备交传口译能力，拥有国际化视野与跨文化沟通能力，能够胜任双语工作场景。</p>
+                        </div>
+                        <div class="about-panel" data-index="5">
+                            <div class="panel-number">06</div>
+                            <h3 class="panel-title">出版社编辑经验</h3>
+                            <div class="panel-stat">上海外语出版社</div>
+                            <p class="panel-desc">曾在上海外语出版社担任编辑工作，具备专业的文字功底、严谨的内容审校能力和出版行业视野。</p>
+                        </div>
+                    </div>
+                </div>
+                </div><!-- /about-body -->
+            </div>
+        </section>
+
+        <!-- 文章分享模块 — 3D Card Carousel -->
+        <section class="articles-section" id="articles">
+            <h2 class="section-title">文章分享</h2>
+            <p class="section-subtitle">思考与沉淀</p>
+
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-card" data-url="article/ai-career-guide.html">
+                        <div class="carousel-card-img">
+                            <img src="article/cover/IMG_0958.JPG" alt="AI赋能职场">
+                        </div>
+                        <div class="carousel-card-body">
+                            <h3 class="carousel-card-title">AI赋能职场：从技能型到判断型</h3>
+                            <p class="carousel-card-desc">全能选手的成长路径与实战指南</p>
+                            <span class="carousel-card-btn">VIEW</span>
+                        </div>
+                    </div>
+                    <div class="carousel-card" data-url="article/shanghai-three-years.html">
+                        <div class="carousel-card-img">
+                            <img src="article/cover/IMG_2251.JPG" alt="三年沪漂">
+                        </div>
+                        <div class="carousel-card-body">
+                            <h3 class="carousel-card-title">三年沪漂</h3>
+                            <p class="carousel-card-desc">从懵懂无知到踏入职场的研究生三年回忆录</p>
+                            <span class="carousel-card-btn">VIEW</span>
+                        </div>
+                    </div>
+                    <div class="carousel-card" data-url="article/product-manager-inspired.html">
+                        <div class="carousel-card-img">
+                            <img src="article/cover/IMG_2465.JPG" alt="如何成为优秀的产品经理">
+                        </div>
+                        <div class="carousel-card-body">
+                            <h3 class="carousel-card-title">如何成为优秀的产品经理</h3>
+                            <p class="carousel-card-desc">《启示录：打造用户喜爱的产品》读书笔记</p>
+                            <span class="carousel-card-btn">VIEW</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation arrows — grouped right side -->
+                <div class="carousel-nav" id="carouselNav">
+                    <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="上一篇">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="下一篇">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+
+                <!-- Dots -->
+                <div class="carousel-dots" id="carouselDots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心能力展示区域 -->
+        <section class="capabilities-section scroll-reveal" id="capabilities">
+            <h2 class="capabilities-title">核心能力</h2>
+            <p class="section-subtitle" style="color: #999999;">全方位产品能力与实战经验</p>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="capability-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+                            <h3 class="capability-title">产品从0到1</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="capability-description">带领团队搭建词汇学习小程序系统，具备完整的产品设计和项目管理能力，从需求分析到上线全流程掌控。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="capability-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="capability-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                            <h3 class="capability-title">用户运营增长</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="capability-description">从0到1运营1w+粉丝账号，个人公众号3000+粉丝，450+原创内容，数据驱动增长策略，精通用户获取与留存。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="capability-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="capability-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                            <h3 class="capability-title">内容管理</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="capability-description">内容策略规划、创作流程管理、效果评估，拥有450+原创内容经验，深谙内容营销之道。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="capability-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="capability-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                            <h3 class="capability-title">项目管理</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="capability-description">敏捷项目管理，跨部门协作，进度把控，多个行业项目经验：娱乐、社交、广告、大数据安全等。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="capability-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="capability-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                            <h3 class="capability-title">产品设计</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="capability-description">用户体验设计、原型制作、交互流程设计，注重用户需求与商业目标的平衡，打造有温度的产品。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="capability-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="capability-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                            <h3 class="capability-title">英语交传口译</h3>
+                        </div>
+                        <div class="card-back">
+                            <p class="capability-description">英语专四专八良好，交传口译能力，曾任上海外语出版社编辑，具备国际化视野与跨文化沟通能力。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工作系统区域 -->
+        <section class="content-section scroll-reveal" id="work">
+            <h2 class="section-title">负责系统</h2>
+            <p class="section-subtitle">IEA-CSG 工作内容展示</p>
+
+            <div class="work-systems scroll-reveal">
+                <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> 现在负责的系统</h3>
+                <div class="system-grid">
+                    <div class="system-tag">央厨</div>
+                    <div class="system-tag">安克餐厅</div>
+                    <div class="system-tag">积分系统</div>
+                    <div class="system-tag">咖啡系统</div>
+                    <div class="system-tag">安克之家</div>
+                </div>
+            </div>
+
+            <div class="work-systems scroll-reveal delay-1">
+                <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> 曾经负责的系统</h3>
+                <div class="system-grid">
+                    <div class="system-tag">创造者大会</div>
+                    <div class="system-tag">小邮局快递</div>
+                    <div class="system-tag">安克嘉年华</div>
+                    <div class="system-tag">价值观系统</div>
+                    <div class="system-tag">悠饭</div>
+                    <div class="system-tag">Maker Mentor Agent</div>
+                    <div class="system-tag">校招Agent</div>
+                    <div class="system-tag">飞书人事</div>
+                    <div class="system-tag">飞书招聘</div>
+                    <div class="system-tag">MOOC</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 兴趣爱好区域 -->
+        <section class="content-section scroll-reveal" id="life">
+            <h2 class="section-title">兴趣爱好</h2>
+            <p class="section-subtitle">工作之外的多彩生活</p>
+            <div class="sports-content">
+                <div class="sport-card">
+                    <span class="sport-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l2-8h4l1 4h4l1-4h4l2 8"/><path d="M3 17h18v2H3z"/><path d="M7 9V5l3-2"/></svg></span>
+                    <h3 class="sport-title">徒步</h3>
+                    <p class="sport-description">
+                        在江浙沪已经徒步许多，安山古道、上青古道、徽杭古道、浙西天池、苏州穹窿山...希望以后在广东附近开拓更多徒步路线，欢迎一起徒步！
+                    </p>
+                </div>
+
+                <div class="sport-card">
+                    <span class="sport-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
+                    <h3 class="sport-title">旅行</h3>
+                    <p class="sport-description">
+                        梦想是环球世界，去过的地方不多，希望可以多见识到更多的人文以及自然景观。
+                    </p>
+                </div>
+
+                <div class="sport-card">
+                    <span class="sport-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+                    <h3 class="sport-title">音乐</h3>
+                    <p class="sport-description">
+                        喜欢唱歌，音乐杂食，爱好类型广泛，欧美音乐、日语、华语、粤语...特别喜欢的歌手乐队有：方大同、林宥嘉、海豚刑警乐队、浪味仙贝、DSPS、Pale Waves、温蒂漫步、温室杂草、焖饼乐队、Palace...
+                    </p>
+                </div>
+
+                <div class="sport-card">
+                    <span class="sport-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2l3 7h-6l3-7z"/><path d="M2 12l7-3v6l-7-3z"/><path d="M22 12l-7-3v6l7-3z"/><path d="M12 22l-3-7h6l-3 7z"/></svg></span>
+                    <h3 class="sport-title">足球</h3>
+                    <p class="sport-description">
+                        虽然已经很久没有踢过足球，但是还有一颗热血的心！本科时在院里当过女足教练，位置是前锋，业余选手一枚。期待重回绿茵场的那一天。
+                    </p>
+                </div>
+
+                <div class="sport-card">
+                    <span class="sport-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v6a6 6 0 0 0 12 0V4"/><line x1="4" y1="21" x2="20" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg></span>
+                    <h3 class="sport-title">健身</h3>
+                    <p class="sport-description">
+                        也已经好久没有健身了，争取在工作之后能捡起来。之前连续三个月几乎没有偷懒过，希望可以有自律的伙伴一起监督！
+                    </p>
+                </div>
+
+                <div class="sport-card">
+                    <span class="sport-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><path d="M12 8v4"/><path d="M8 21l4-9 4 9"/><line x1="6" y1="15" x2="18" y2="15"/></svg></span>
+                    <h3 class="sport-title">各种运动</h3>
+                    <p class="sport-description">
+                        对各种运动都不排斥，也会一点：羽毛球、乒乓球、网球、长跑、台球...相信运动是保持活力和创造力的最好方式。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式区域 -->
+        <section class="contact-section scroll-reveal" id="contact">
+        <h2 class="section-title">交个朋友</h2>
+        <p class="section-subtitle">欢迎添加我的微信好友，关注我的个人公众号</p>
+
+        <div class="contact-methods">
+            <button class="contact-item"
+                    onclick="showWechat()"
+                    aria-label="显示微信二维码">
+                <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                <div class="contact-label">微信好友</div>
+                <div class="contact-info">扫码添加微信<br>日常交流 · 工作讨论</div>
+            </button>
+
+            <button class="contact-item"
+                    onclick="showPublicAccount()"
+                    aria-label="显示公众号二维码">
+                <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                <div class="contact-label">个人公众号</div>
+                <div class="contact-info">3000+粉丝 · 450+原创<br>知识分享 · 生活记录</div>
+            </button>
+
+            <button class="contact-item"
+                    onclick="showOfficeLocation()"
+                    aria-label="显示工作地点信息">
+                <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20"/><path d="M9 22V12h6v10"/><line x1="8" y1="6" x2="8.01" y2="6"/><line x1="16" y1="6" x2="16.01" y2="6"/><line x1="12" y1="6" x2="12.01" y2="6"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/></svg></div>
+                <div class="contact-label">工作地点</div>
+                <div class="contact-info">安克大楼18F-N093<br>ATIT部门 · 欢迎来访</div>
+            </button>
+        </div>
+
+        <div class="qr-section">
+            <div class="qr-card">
+                <div class="qr-placeholder wechat-qr">
+                    <img src="wechat-qr.jpg" alt="微信二维码">
+                </div>
+                <div class="qr-label">微信好友</div>
+                <div class="qr-description">扫码添加好友</div>
+            </div>
+
+            <div class="qr-card">
+                <div class="qr-placeholder public-qr">
+                    <img src="public-account-qr.jpg" alt="公众号二维码">
+                </div>
+                <div class="qr-label">个人公众号</div>
+                <div class="qr-description">这里是Fansir的小世界<br><br>现已完成刘毅5000系列，刘毅10000系列，标准日本语初级上下册语法系列，标准日本语初级上下册单词系列，哈佛大学公开课justice系列，国际营销英语期末复习系列，美国文学复习系列，文学诗歌赏析系列，简明语言学系列，专八口译系列，专八单词系列，Vocabulary Builder系列，考研政治系列，考研基础英语系列，新编日语1和2单词系列，日语翻译系列，advancing vocabulary skills系列，结构方程模型SEM系列。<br><br>不定期更新我的生活系列，音乐分享系列，书评和影评系列，时事评论及总结系列，耳机评价系列，欢迎关注！</div>
+            </div>
+        </div>
+
+        <p style="margin-top: 3rem; color: #999999; font-size: 1.1rem;">
+            感谢阅读
+        </p>
+        </section>
+
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn" id="shareBtn" aria-label="分享" title="分享">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+    </div>
+
+    <button class="back-to-top" aria-label="返回顶部" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ↑
+    </button>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher" id="themeSwitcher">
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <div class="theme-panel" id="themePanel">
+            <button class="theme-dot" data-theme="noir" title="纯黑" style="background: #333333; border: 1px solid #555;"></button>
+            <button class="theme-dot active" data-theme="midnight" title="午夜黑" style="background: #00e5ff;"></button>
+            <button class="theme-dot" data-theme="ocean" title="深海蓝" style="background: #38bdf8;"></button>
+            <button class="theme-dot" data-theme="aurora" title="极光紫" style="background: #a855f7;"></button>
+            <button class="theme-dot" data-theme="forest" title="暗夜森林" style="background: #34d399;"></button>
+            <button class="theme-dot" data-theme="wine" title="酒红" style="background: #fb7185;"></button>
+            <button class="theme-dot" data-theme="warm" title="暖棕" style="background: #fbbf24;"></button>
+        </div>
+    </div>
+
+    <!-- Background Music Player -->
+    <audio id="bgMusic" preload="auto"></audio>
+    <div class="music-player" id="musicPlayer">
+        <button class="music-btn music-prev" id="musicPrev" aria-label="上一首">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button class="music-btn music-play" id="musicToggle" aria-label="播放/暂停">
+            <div class="music-bars" id="musicBars">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </button>
+        <button class="music-btn music-next" id="musicNext" aria-label="下一首">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+    </div>
+
+    <!-- Modals (a11y) -->
+    <div class="modal" id="wechat-modal" role="dialog" aria-modal="true" aria-labelledby="wechat-modal-title">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h3 id="wechat-modal-title" style="margin-bottom: 1.5rem; color: #ffffff; font-size: 1.5rem;">微信二维码</h3>
+            <div style="max-width: 280px; width: 100%; margin: 0 auto 1.5rem; border-radius: 12px; overflow: hidden; background: #ffffff; padding: 0.75rem;">
+                <img src="wechat-qr.jpg" alt="微信二维码" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 8px;">
+            </div>
+            <p style="font-size: 1rem; color: #ffffff; margin-bottom: 0.5rem;">扫码添加微信好友</p>
+            <p style="font-size: 0.95rem; color: #999999;">日常交流 · 工作讨论</p>
+        </div>
+    </div>
+
+    <div class="modal" id="gzh-modal" role="dialog" aria-modal="true" aria-labelledby="gzh-modal-title">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h3 id="gzh-modal-title" style="margin-bottom: 1.5rem; color: #ffffff; font-size: 1.5rem;">公众号二维码</h3>
+            <div style="width: 100%; max-height: 220px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 12px;">
+                <img src="public-account-qr.jpg" alt="公众号二维码" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;">
+            </div>
+            <p style="font-size: 0.95rem; color: #ffffff; margin-bottom: 1rem; line-height: 1.6;">这里是Fansir的小世界</p>
+            <p style="font-size: 0.85rem; color: #999999; margin-bottom: 0.8rem; line-height: 1.5; text-align: left;">现已完成刘毅5000系列，刘毅10000系列，标准日本语初级上下册语法系列，标准日本语初级上下册单词系列，哈佛大学公开课justice系列，国际营销英语期末复习系列，美国文学复习系列，文学诗歌赏析系列，简明语言学系列，专八口译系列，专八单词系列，Vocabulary Builder系列，考研政治系列，考研基础英语系列，新编日语1和2单词系列，日语翻译系列，advancing vocabulary skills系列，结构方程模型SEM系列。</p>
+            <p style="font-size: 0.85rem; color: #999999; line-height: 1.5; text-align: left;">不定期更新我的生活系列，音乐分享系列，书评和影评系列，时事评论及总结系列，耳机评价系列，欢迎关注！</p>
+            <p style="font-size: 0.95rem; color: #999999;">3000+粉丝 | 450+原创</p>
+        </div>
+    </div>
+
+    <!-- Article Reader Modal -->
+    <div class="article-reader" id="articleReader">
+        <div class="reader-header">
+            <button class="reader-close" id="readerClose" aria-label="关闭">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="reader-body" id="readerBody">
+            <iframe id="readerFrame" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

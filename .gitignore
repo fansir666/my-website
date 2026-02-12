@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+
+# Claude / IDE tools
+.claude/
+.sisyphus/
+.specify/
+specs/
+
+# Source docx files
+*.docx
+article/article-01.txt
+
+# Extracted raw word media (uncompressed originals)
+article/word/
+
+# Temp lock files
+.~*
+~$*
+
+# Markdown notes
+交互升级总结与复用提示词.md
